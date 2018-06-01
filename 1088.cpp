@@ -6,23 +6,49 @@ using namespace std;
 int main(int argc, char const *argv[]){
 
 	string br = "--------------------------------------------------------------------------------\n";
-	string hr = "\n";
+	int n = 0;
 
-
-	string content;
 	char input[85];
 
-	while (cin.getline(input,85) ){
+	while (cin >> input){
 
-		if ()
+		if (strcmp(input,"<br>") == 0){
+			cout << endl;
+			n = 0;
+		}
+		else
 
-		content.append(input);
+			if (strcmp(input,"<hr>") == 0){
+				if (n!=0) cout << endl;
+				cout << br;
+				n = 0;
+			}
+			else{
 
+				
+				if(n + strlen(input) < 80){
 
-		cout << content << endl;
+					if(n != 0){
+						cout<<" " << input;
+						n = n + strlen(input) + 1; 
+					}
+					else{
+						cout << input ;
+						n = strlen(input) ; 
+					}
+				}
 
+				else{
+
+					cout<< endl << input;
+					n = strlen(input); 
+				}
+
+			}
 	}
 
+
+	cout <<endl;
 
 	
 	return 0;

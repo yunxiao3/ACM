@@ -1,38 +1,28 @@
-#include <algorithm>
-#include<iostream>
-#include<cstring>
+#include <iostream>
+#include<algorithm>
 using namespace std;
 
-
-int array[1005];
-
-
+int a[10000];
 
 int main(int argc, char const *argv[]){
-
-	int N, T;
-
-	cin >> N;
-
-	for (int i = 0; i < N; ++i){
 		
-		cin >> T;
+		int n, m;
+		cin >> n;
+		for (int i = 0; i < n; ++i){
+			cin >> m;
+			for( int j = 0; j < m; j++)
+				cin >> a[j];
+			sort(a,a+m);
 
-		for (int i = 0; i < T; ++i)
-				cin >> array[i];							
+			cout << a[0];
+			for(int j = 1; j < m; j++)
+				cout<<" " << a[j];
 
+			cout<<endl;
 
-		sort(array, array + T);
-
-
-		for (int i = 0; i < T - 1; ++i)
-				cout << array[i] << " ";
-
-		cout << array [T - 1] <<endl;
-	}
+		}
 
 
 
-	
 	return 0;
 }

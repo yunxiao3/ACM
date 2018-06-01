@@ -1,29 +1,28 @@
-#include <iostream>
-#include<cstring>
-using namespace std;
 
-int main(int argc, char const *argv[]){
+#include<iostream>
 
+#include<algorithm>//sort头文件
 
-	int T; cin  >> T;
+using namespace std; 
 
-	for (int i = 0; i < T; ++i){
-		
-		int  year, num; cin >>year>>num;
-		int times = 1;
-		while(!(year % 4 == 0 && year % 100 != 0 || year % 400 == 0)){
-			year++;
-		}
+int main()
 
-		while(times < num ){
-			year += 4;
-			if(year % 4 == 0 && year % 100 != 0 || year % 400 == 0)
-				times ++;
-		}
+{
 
-		cout << year <<endl;
-	}
+int a[100000],n,i,j,t;
 
+cin>>n;
 
-	return 0;
+for(i=0;i<n;i++)
+
+cin>>a[i];
+
+std::sort(a,a+n);//对a[0]至a[n-1]排序
+
+for(i=0;i<=n-1;i++)
+
+cout<<a[i]<<" ";
+
+return 0;
+
 }

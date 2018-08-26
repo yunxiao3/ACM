@@ -1,23 +1,26 @@
 #include <iostream>
+#include<cstdio>
 using namespace std;
+typedef long long LL;
+int mul(LL x, LL n){
+	int ans = 1;
+	while(n > 0){
+		if(n & 1)
+			ans = x * ans % 10;
+		x = x * x % 10;
+		n >>= 1;
+	}
+	return ans;
+}
+
 
 int main(int argc, char const *argv[]){
-	int c, d;
-	int a[10][5];
-	int b[10] = { 1,1,4,4,2,1,1,4,4,2 };
-	a[0][0] = 0;
-	a[1][0] = 1;
-	a[2][0] = 6; a[2][1] = 2; a[2][2] = 4; a[2][3] = 8;
-	a[3][0] = 1; a[3][1] = 3; a[3][2] = 9; a[3][3] = 7;
-	a[4][0] = 6; a[4][1] = 4;
-	a[5][0] = 5;
-	a[6][0] = 6;
-	a[7][0] = 1; a[7][1] = 7; a[7][2] = 9; a[7][3] = 3;
-	a[8][0] = 6; a[8][1] = 8; a[8][2] = 4; a[8][3] = 2;
-	a[9][0] = 1; a[9][1] = 9;
-	while (cin >> c >> d ) {
-		cout << a[c % 10][d % (b[c % 10])] << endl;
+
+	LL a, b;
+	while(scanf("%lld%lld",&a,&b) != EOF){
+		printf("%d\n",mul(a,b));
 	}
+
 	
 	return 0;
 }

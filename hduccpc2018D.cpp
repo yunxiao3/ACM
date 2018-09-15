@@ -3,7 +3,7 @@
 using namespace std;
 
 
-void print(long long x){
+void print(long long x){d
 	if(x % 2 == 1)
 		printf("%lld %lld\n",(x*x - 1) / 2 , (x*x + 1) / 2 );
 	else{

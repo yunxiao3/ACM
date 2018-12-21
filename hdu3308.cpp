@@ -63,9 +63,9 @@ int qurey(int root, int l, int r){
 	if(mid >= l)	
 		Max = qurey(root << 1, l, r);
 	if(mid < r)
-		Max = max(Max,qurey(root << 1 | 1, l, r));
-	if(c[root<<1].rv < c[root<<1|1].lv)
-		Max = max(Max,min(mid-l+1,c[root<<1].rlen) + min(r - mid, c[root<<1|1].llen));
+			Max = max(Max,qurey(root << 1 | 1, l, r));
+		if(c[root<<1].rv < c[root<<1|1].lv)
+			Max = max(Max,min(mid-l+1,c[root<<1].rlen) + min(r - mid, c[root<<1|1].llen));
 	return Max;
 }
 int main(int argc, char const *argv[]){
